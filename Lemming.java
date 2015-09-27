@@ -26,7 +26,6 @@ public class Lemming extends Critter {
 	
 	/** @returns the String representation of this Lemming */
 	public String toString() {
-		String myString = ("\u1F42D");
-		return myString;
+		return  "🐭";
 	}
 }

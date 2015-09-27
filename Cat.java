@@ -37,6 +37,6 @@ public class Cat extends Critter {
 
 	/** @returns the String representation of this cat */
 	public String toString() {
-		return "☃";
+		return "🐱";
 	}
 }

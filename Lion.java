@@ -49,7 +49,7 @@ public class Lion extends Cat {
 		if (getMove() == Direction.CENTER){
 			return "Z";
 		}
-		else return "☄";
+		else return "L";
 	}
 }
 

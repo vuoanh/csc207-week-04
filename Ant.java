@@ -31,7 +31,7 @@ public class Ant extends Critter {
 		return Speed.FAST;
 	}
 	public String toString() {
-		return "🐜";
+		return "%";
 	}
 
 	public boolean getStepsNorth(){
