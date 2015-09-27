@@ -43,8 +43,10 @@ public class Lion extends Cat {
 		return Speed.SLOW;
 	}
 
-	/** @returns the String representation of this lion (Z for sleeping 
-	 * lionand L for not sleeping lion*/
+	/** @returns the String representation of this lion 
+	Z for sleeping lion and L for not sleeping lion
+	*/
+	
 	public String toString() {
 		if (getMove() == Direction.CENTER){
 			return "Z";
