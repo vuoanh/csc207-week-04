@@ -1,8 +1,11 @@
 import java.awt.Color;
 
+/**
+ * A bird is a Critter that moves in a clockwise square of length 3
+ */
 public class Bird extends Critter {
 	private int steps = 0;
-	
+
 	public Bird () { }
 
 	/** @return the food type for this Bird: grass */
@@ -20,6 +23,8 @@ public class Bird extends Critter {
 		return Speed.FAST;
 	}
 
+	/** @return the next move of this Lemming: a bird moves 3 spaces north,
+	 * 3 spaces east, 3 spaces south, and 3 spaces west, and then repeats*/
 	public Direction getMove() {
 		steps++;
 		int res = steps % 12;;
@@ -33,7 +38,14 @@ public class Bird extends Critter {
 			return Direction.WEST;
 	}
 
-	/** @returns the String representation of this bird */
+	/** @returns the String representation of this bird 
+	 * Character: Depends on the last direction the bird moved :
+	 * 	North: “∧”
+	 * 	East: “>”
+	 * 	South: “∨”
+	 * 	West: “<”
+	 */
+
 	public String toString() {
 		if (getMove() == null) { 
 			throw new IllegalArgumentException();
