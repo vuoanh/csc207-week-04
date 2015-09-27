@@ -1,7 +1,8 @@
 import java.awt.Color;
 
 /**
- * An ant either moves north and east or south and west depending on boolean stepsNorth
+ * An ant is a critter that either moves north and east or south and west depending 
+ * on boolean stepsNorth
  */
 public class Ant extends Critter {
 	private boolean stepsNorth;
