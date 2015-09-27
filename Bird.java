@@ -1,5 +1,19 @@
 import java.awt.Color;
-
+/**
+ * The Bird class.
+ *
+ * Bird is a subclass of Critter that :
+ * Constructor: public Bird()
+ * Movement: Moves in a clockwise square of length 3, i.e., a bird moves 3 spaces north, 3 spaces east, 3 spaces south, and 3 spaces west, and then repeats.
+ * Food type: Grass
+ * Color: Red
+ * Speed: Fast
+ * Character: Depends on the last direction the bird moved :
+ * 	North: “∧”
+ * 	East: “>”
+ * 	South: “∨”
+ * 	West: “<”
+ */
 public class Bird extends Critter {
 	private int steps = 0;
 	
