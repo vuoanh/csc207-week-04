@@ -5,7 +5,7 @@ public class Lion extends Cat {
 
 	private int steps = 0;
 	private Random rand = new Random();
-	private int movePredictor = rand.nextInt(3);
+	private int movePredictor = rand.nextInt(4);
 	private int sleep = 0;
 
 	public Lion() {}
@@ -23,7 +23,7 @@ public class Lion extends Cat {
 		}
 
 		if ((steps % 5) == 1) {		
-			movePredictor = rand.nextInt(3);
+			movePredictor = rand.nextInt(4);
 		}
 		return Directions[movePredictor];
 	}	

@@ -7,7 +7,7 @@ import java.util.*;
 public class Cat extends Critter {
 	private int steps = 0;
 	private Random rand = new Random();
-	private int movePredictor = rand.nextInt(3);
+	private int movePredictor = rand.nextInt(4);
 	
 	public Cat() {}
 
@@ -15,7 +15,7 @@ public class Cat extends Critter {
 	public Direction getMove() {
 		steps++;
 		if ((steps % 5) == 1) {		
-			movePredictor = rand.nextInt(3);
+			movePredictor = rand.nextInt(4);
 		}
 		return Directions[movePredictor];
 	}
