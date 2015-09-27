@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.util.*;
 
 /**
- * A cat is a Critter that always marches east.
+ * A cat is a Critter that moves in a random cardinal direction for five steps and repeats.
  */
 public class Cat extends Critter {
 	private int steps = 0;
@@ -11,7 +11,7 @@ public class Cat extends Critter {
 	
 	public Cat() {}
 
-	/** @return the next move of this cat: always east */
+	/** @return the next move of this cat and chooses a new random direction every 5 steps */
 	public Direction getMove() {
 		steps++;
 		if ((steps % 5) == 1) {		
