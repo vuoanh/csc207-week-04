@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Lion extends Cat {
 
-	private int steps = 0;
+	protected int steps = 0;
 	private Random rand = new Random();
 	private int movePredictor = rand.nextInt(4);
 	private int sleep = 0;

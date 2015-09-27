@@ -39,13 +39,13 @@ public class Bird extends Critter {
 			throw new IllegalArgumentException();
 		} 
 		else if (getMove() == Direction.NORTH) {
-			return "^";
+			return "∧";
 		}
 		else if (getMove() == Direction.EAST){
 			return ">";
 		}
 		else if (getMove() == Direction.SOUTH){
-			return "v";
+			return "∨";
 		}
 		else {
 			return "<";

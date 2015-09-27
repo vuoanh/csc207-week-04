@@ -7,7 +7,9 @@ public class Monkey extends Critter implements CritterInfo {
 	private Random rand = new Random();
 	private int speedPredictor = rand.nextInt(3);
 
-	public Monkey(){	}
+	public Monkey(){	
+
+	}
 
 
 	public Direction getMove() {

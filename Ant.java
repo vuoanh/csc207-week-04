@@ -1,5 +1,9 @@
 import java.awt.Color;
 
+/**
+ * An ant alternates walking north and east if StepsNorth equal to true, otherwise an
+ * ant alternates walking south and west,
+ */
 public class Ant extends Critter {
 	private boolean stepsNorth;
 	private int steps = 0;
@@ -7,6 +11,10 @@ public class Ant extends Critter {
 	public Ant(boolean stepsNorth){	
 		this.stepsNorth = stepsNorth;
 	}
+	
+	/** @return the next move of this ant - An ant alternates walking north and east 
+	 * if StepsNorth equal to true, otherwise an ant alternates walking south and west 
+	 */
 	public Direction getMove() {
 		steps++;
 		if (getStepsNorth() == true) {
