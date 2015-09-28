@@ -1,9 +1,13 @@
 import java.awt.Color;
-
+/**
+ * A Sloth is a small animal in the Lion family that are scared of Lion, hence runs away 
+ * from a Lion (a not sleeping lion).
+ */
 public class Sloth extends Lion {
-
 	public Sloth() {}
 	
+	/** @return the next move of this sloth - if it sees a lion, it would run in the 
+	 * opposite direction, otherwise it sleeps (it's a sloth) */
 	public Direction getMove() {
 		if (info.getNeighbor(Direction.NORTH).equals("L"))
 			return Direction.SOUTH;
@@ -21,8 +25,8 @@ public class Sloth extends Lion {
 			return Color.PINK;
 	}
 
-	/** @returns the String representation of this lion (Z for sleeping 
-	 * lion and L for not sleeping lion*/
+	/** @returns the String representation of this sloth (😴 for sleeping 
+	 * sloth; 😱 when it sees a lion; 😎 when it sees a sloth; otherwise 😈*/
 	public String toString() {
 		if (getMove() == Direction.CENTER){
 			return "😴";

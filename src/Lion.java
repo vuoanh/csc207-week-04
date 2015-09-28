@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.util.*;
 
 /**
- * A Lion is a Critter that moves and sleeps.
+ * A Lion is a Cat that moves and sleeps.
  */
 public class Lion extends Cat {
 	private int steps = 0;
@@ -12,7 +12,10 @@ public class Lion extends Cat {
 
 	public Lion() {}
 
-	/** @return the next move of this lion -  */
+	/** @return the next move of this lion - moves randomly in a cardinal direction
+	 * for five steps, then chooses a new random cardinal direction, and repeats.
+	 * The lion sleeps every 8 moves, sleeps counts for a random number of steps from 
+	 * 0 to 5/ */
 	public Direction getMove() { 
 		if (steps % 8 == 0){
 			sleep = rand.nextInt(5);
