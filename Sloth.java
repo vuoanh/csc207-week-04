@@ -5,7 +5,7 @@ public class Sloth extends Lion {
 	public Sloth() {}
 	
 	public Direction getMove() {
-		if (info.getNeighbor(NORTH).equals("L"))
+		if (info.getNeighbor(Direction.NORTH).equals("L"))
 			return Direction.SOUTH;
 		else if (info.getNeighbor(Direction.EAST).equals("L"))
 			return Direction.WEST;	
