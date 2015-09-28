@@ -7,12 +7,14 @@ import java.util.*;
 public class Cat extends Critter {
 	private Random rand = new Random();
 	private int movePredictor = rand.nextInt(4);
+	private int steps = 0;
 	
 	public Cat() {}
 
 	/** @return the next move of this cat and chooses a new random direction every 5 steps */
 	public Direction getMove() {
-		if ((info.getNumSteps() % 5) == 1) {		
+		steps++;
+		if ((steps % 5) == 1) {		
 			movePredictor = rand.nextInt(4);
 		}
 		return Directions[movePredictor];

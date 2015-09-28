@@ -5,18 +5,24 @@ public class Monkey extends Critter {
 
 	private Random rand = new Random();
 	private int speedPredictor = rand.nextInt(3);
-
+	private int steps = 0;
+	
 	public Monkey(){}
 
 	public Direction getMove() {
-		if ((info.getNumSteps() % 5) == 0) {
+		steps++;
+		if ((steps % 5) == 0) {
 			speedPredictor = rand.nextInt(3);
-			if (info.getNumSteps() > 9 && info.hasMated() == false) {
-				info.suicide();
-			}
+			dieOfLonliness();
 		}
 		return Directions[0];
 	}	
+	
+	public void dieOfLonliness() {
+		if (steps > 9 && info.hasMated() == false) {
+			info.suicide();
+		}
+	}
 
 	public FoodType getFoodType() {
 		if (getSpeed() == Speed.SLOW || (info.getHungerLevel()) == 0)
@@ -44,7 +50,7 @@ public class Monkey extends Critter {
 	}
 
 	public String toString() {
-		if (info.getNumSteps() > 8 && info.hasMated() == false) {
+		if (steps > 8 && info.hasMated() == false) {
 			return "😭";
 		}
 		else  { 

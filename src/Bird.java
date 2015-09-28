@@ -4,7 +4,8 @@ import java.awt.Color;
  * A bird is a Critter that moves in a clockwise square of length 3
  */
 public class Bird extends Critter {
-
+	private int steps = 0;
+	
 	public Bird () { }
 
 	/** @return the food type for this Bird: grass */
@@ -25,7 +26,8 @@ public class Bird extends Critter {
 	/** @return the next move of this Lemming: a bird moves 3 spaces north,
 	 * 3 spaces east, 3 spaces south, and 3 spaces west, and then repeats*/
 	public Direction getMove() {
-		int res = info.getNumSteps() % 12;;
+		steps++;
+		int res = steps % 12;;
 		if (res < 3)
 			return Direction.NORTH;
 		else if (res < 6)

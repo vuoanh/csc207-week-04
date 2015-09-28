@@ -4,6 +4,7 @@ import java.awt.Color;
  * from a Lion (a not sleeping lion).
  */
 public class Sloth extends Lion {
+	
 	public Sloth() {}
 	
 	/** @return the next move of this sloth - if it sees a lion, it would run in the 
