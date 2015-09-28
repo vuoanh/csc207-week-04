@@ -1,18 +1,19 @@
 import java.awt.Color;
 import java.util.*;
 
+/**
+ * A Lion is a Critter that moves and sleeps.
+ */
 public class Lion extends Cat {
-
-	protected int steps = 0;
+	private int steps = 0;
 	private Random rand = new Random();
 	private int movePredictor = rand.nextInt(4);
 	private int sleep = 0;
 
 	public Lion() {}
 
-	/** @return the next move of this lion */
+	/** @return the next move of this lion -  */
 	public Direction getMove() { 
-		steps++;
 		if (steps % 8 == 0){
 			sleep = rand.nextInt(5);
 		}
@@ -45,8 +46,8 @@ public class Lion extends Cat {
 
 	/** @returns the String representation of this lion 
 	Z for sleeping lion and L for not sleeping lion
-	*/
-	
+	 */
+
 	public String toString() {
 		if (getMove() == Direction.CENTER){
 			return "Z";

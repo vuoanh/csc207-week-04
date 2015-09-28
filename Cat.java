@@ -5,7 +5,6 @@ import java.util.*;
  * A cat is a Critter that moves in a random cardinal direction for five steps and repeats.
  */
 public class Cat extends Critter {
-	private int steps = 0;
 	private Random rand = new Random();
 	private int movePredictor = rand.nextInt(4);
 	
@@ -13,8 +12,7 @@ public class Cat extends Critter {
 
 	/** @return the next move of this cat and chooses a new random direction every 5 steps */
 	public Direction getMove() {
-		steps++;
-		if ((steps % 5) == 1) {		
+		if ((info.getNumSteps() % 5) == 1) {		
 			movePredictor = rand.nextInt(4);
 		}
 		return Directions[movePredictor];
