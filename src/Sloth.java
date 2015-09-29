@@ -4,40 +4,28 @@ import java.awt.Color;
  * from a Lion (a not sleeping lion).
  */
 public class Sloth extends Lion {
-	
+
+	/** Constructor*/
 	public Sloth() {}
-	
-	/** @return the next move of this sloth - if it sees a lion, it would run in the 
-	 * opposite direction, otherwise it sleeps (it's a sloth) */
-	public Direction getMove() {
-		if (info.getNeighbor(Direction.NORTH).equals("L"))
-			return Direction.SOUTH;
-		else if (info.getNeighbor(Direction.EAST).equals("L"))
-			return Direction.WEST;	
-		else if (info.getNeighbor(Direction.SOUTH).equals("L"))
-			return Direction.NORTH;		
-		else if (info.getNeighbor(Direction.WEST).equals("L"))
-			return Direction.EAST;
-		else return Direction.CENTER;
-	}
 
 	/** @returns the color for this sloth: pink*/
+	@Override
 	public Color getColor() {
-			return Color.PINK;
+		return Color.PINK;
 	}
 
 	/** @returns the String representation of this sloth (😴 for sleeping 
-	 * sloth; 😱 when it sees a lion; 😎 when it sees a sloth; otherwise 😈*/
+	 * sloth; 😱 when it's not sleeping; 😎 when it sees a Lion at the North direction;
+	 * otherwise 😈*/
+	@Override
 	public String toString() {
+		if (info.getNeighbor(Direction.NORTH).equals("L")){
+			return "😎";
+		}
 		if (getMove() == Direction.CENTER){
 			return "😴";
 		}
-		else if (getMove() != Direction.CENTER){
+		else 
 			return "😱";
-		}
-		else if (info.getNeighbor(Direction.NORTH).equals("Sloth")){
-			return "😎";
-		}
-		else return "😈";
 	}
 }

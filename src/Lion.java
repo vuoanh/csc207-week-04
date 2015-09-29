@@ -10,39 +10,38 @@ public class Lion extends Cat {
 	private int movePredictor = rand.nextInt(4);
 	private int sleep = 0;
 
+	/** Constructor*/
 	public Lion() {}
 
 	/** @return the next move of this lion - moves randomly in a cardinal direction
 	 * for five steps, then chooses a new random cardinal direction, and repeats.
 	 * The lion sleeps every 8 moves, sleeps counts for a random number of steps from 
 	 * 0 to 5/ */
-	public Direction getMove() { 
+	@Override
+	public Direction getMove() {
+		steps++;
 		if (steps % 8 == 0){
 			sleep = rand.nextInt(5);
+			if  (sleep > 0) {
+				sleep--;
+				steps--;
+				return Direction.CENTER;	
+			}
 		}
-		if  (sleep > 0) {
-			sleep--;
-			steps--;
-			return Direction.CENTER;	
-		}
-
-		if ((steps % 5) == 1) {		
+		else if ((steps % 5) == 1) {		
 			movePredictor = rand.nextInt(4);
 		}
 		return Directions[movePredictor];
 	}	
 
-	/** @return the food type for this lion: meat */
-	public FoodType getFoodType() {
-		return FoodType.MEAT;
-	}
-
 	/** @returns the color for this lion: orange */
+	@Override
 	public Color getColor() {
 		return Color.ORANGE;
 	}
 
 	/** @returns the speed of this lion: slow */
+	@Override
 	public Speed getSpeed() {
 		return Speed.SLOW;
 	}
@@ -50,12 +49,17 @@ public class Lion extends Cat {
 	/** @returns the String representation of this lion 
 	Z for sleeping lion and L for not sleeping lion
 	 */
-
+	@Override
 	public String toString() {
-		if (getMove() == Direction.CENTER){
+		if (sleep > 0){
 			return "Z";
 		}
 		else return "L";
+	}
+	
+	/** @returns the random MovePredictor of the lion*/
+	public int getMovePredictor() {
+		return movePredictor;
 	}
 }
 
